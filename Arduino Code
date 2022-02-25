@@ -1,0 +1,37 @@
+int led=8;
+int sensor_val;
+int sensor=A0;
+
+void setup() {
+  // put your setup code here, to run once:
+
+  pinMode(led,OUTPUT);
+  pinMode(sensor,INPUT);
+  Serial.begin(9600); 
+  
+  }
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  sensor_val=analogRead(A0);
+  Serial.println(sensor_val);
+  
+
+  if (sensor_val>900){
+    
+  
+
+    digitalWrite(led,HIGH);
+    delay(100);
+    digitalWrite(led,LOW);
+    delay(100);
+    
+  
+  }
+
+  else {
+
+  digitalWrite(led,LOW);
+}
+
+}
